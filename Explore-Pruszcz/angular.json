@@ -24,10 +24,14 @@
               "src/assets"
             ],
             "styles": [
+              "./src/css/bootstrap.min.css",
               "src/styles.css"
             ],
             "scripts": [
-              "js/scripts.js"
+              "./node_modules/jquery/dist/jquery.js",
+              "./src/js/popper.min.js",
+              "./src/js/scripts.js",
+              "./src/js/bootstrap.min.js"
             ]
           },
           "configurations": {
@@ -90,10 +94,14 @@
               "src/assets"
             ],
             "styles": [
+              "./src/css/bootstrap.min.css",
               "src/styles.css"
             ],
             "scripts": [
-              "js/scripts.js"
+              "./node_modules/jquery/dist/jquery.js",
+              "./src/js/popper.min.js",
+              "./src/js/scripts.js",
+              "./src/js/bootstrap.min.js"
             ]
           }
         },
