@@ -22,12 +22,9 @@
                     {
                         scrollTop: target.offset().top,
                     },
-                  300, function () {
-
-                    // when done, add hash to url
-                    // (default click behaviour)
-                    window.location.hash = hash;
-                  });
+                    1000,
+                    "easeInOutExpo"
+                );
                 return false;
             }
         }

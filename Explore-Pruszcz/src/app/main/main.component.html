@@ -1,6 +1,13 @@
 
 <!-- Page Content-->
 <div class="container-fluid p-0">
+  <!-- Map-->
+  <section class="map-section" id="map">
+    <div class="map-section-content" >
+      <google-map width=100% height="{{innerHeight}}" [options]="options" [center]="center" [zoom]="zoom"></google-map>
+    </div>
+  </section>
+  <hr class="m-0" />
   <!-- About-->
   <section class="resume-section" id="about">
     <div class="resume-section-content">
