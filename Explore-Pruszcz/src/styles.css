@@ -70,6 +70,10 @@ body {
   background-color: #fff;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 [tabindex="-1"]:focus:not(:focus-visible) {
   outline: 0 !important;
 }
