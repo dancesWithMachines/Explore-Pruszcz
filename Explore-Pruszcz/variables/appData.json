@@ -1,5 +1,19 @@
 [
   {
+    "id": 0,
+    "title": "Pruszcz Gdański",
+    "location": {
+      "lat": null,
+      "lng": null
+    },
+    "options": {
+      "icon": null
+    },
+    "description": "Pruszcz Gdański to miasto położone na pomorzu niedaleko Gdańska.",
+    "photoPath": "assets/img/places/0.jpg",
+    "link": "https://www.pruszcz-gdanski.pl/"
+  },
+  {
     "id": 1,
     "title": "Szkoła podstawowa nr.1 w Pruszczu Gdańskim",
     "location": {
@@ -24,7 +38,7 @@
       "icon": "assets/img/icons/2.png"
     },
     "description": "Kościół matki boskiej ośmiobitowej",
-    "photoPath": null,
+    "photoPath": "assets/img/places/2.jpg",
     "link": "http://www.zso1.pl/"
   }
 ]

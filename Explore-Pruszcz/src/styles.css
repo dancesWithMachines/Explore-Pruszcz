@@ -10778,4 +10778,9 @@ section.map-section {
   }
 }
 
+.border-img {
+  border-width: 0.5rem !important;
+  max-width: 50rem
+}
+
 

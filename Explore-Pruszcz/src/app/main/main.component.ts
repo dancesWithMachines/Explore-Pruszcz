@@ -4,6 +4,7 @@ import data from 'variables/appData.json';
 import { Place } from 'src/shared/models/place.model';
 import { CommonModule } from "@angular/common";
 import { MapStyles } from 'src/shared/mapStyles/map.style';
+import { TargetLocator } from 'selenium-webdriver';
 
 
 @Component({
@@ -15,6 +16,7 @@ import { MapStyles } from 'src/shared/mapStyles/map.style';
 export class MainComponent implements OnInit {
   public innerHeight: any;
   public places: Place[];
+  public currentPlace: Place;
   placesData = data;
   mapStyles;
   zoom: number = 14;
@@ -35,7 +37,8 @@ export class MainComponent implements OnInit {
     //console.log(JSON.stringify(mapStyle));
     this.getData();
     this.setOptions();
-    console.log(this.places);
+    this.setCurrentPlace(0);
+    //console.log(this.places);
    
   }
 
@@ -55,6 +58,15 @@ export class MainComponent implements OnInit {
 
   getData() {
     this.places = data;
+  }
+
+  setCurrentPlace(id: number) {
+    this.currentPlace = this.places[id];
+  }
+
+  scroll() {
+    const el: HTMLElement = document.getElementById('description');
+    el.scrollIntoView();
   }
 
   
