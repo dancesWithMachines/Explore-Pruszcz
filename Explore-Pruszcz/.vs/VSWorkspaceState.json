@@ -1,0 +1,12 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\src",
+    "\\src\\assets",
+    "\\src\\assets\\img",
+    "\\src\\shared",
+    "\\src\\shared\\models"
+  ],
+  "SelectedNode": "\\src\\shared\\models\\place.model.ts",
+  "PreviewInSolutionExplorer": false
+}

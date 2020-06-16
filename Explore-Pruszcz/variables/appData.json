@@ -1,0 +1,30 @@
+[
+  {
+    "id": 1,
+    "title": "Szkoła podstawowa nr.1 w Pruszczu Gdańskim",
+    "location": {
+      "lat": 54.261532,
+      "lng": 18.650771
+    },
+    "options": {
+      "icon": "assets/img/icons/1.png"
+    },
+    "description": "Szczerze to nienawidzę tego miejsca no ale cusz",
+    "photoPath": "assets/img/places/1.jpg",
+    "link": "http://www.zso1.pl/"
+  },
+  {
+    "id": 2,
+    "title": "Kościółek księdza Łady",
+    "location": {
+      "lat": 54.252842,
+      "lng": 18.629506
+    },
+    "options": {
+      "icon": "assets/img/icons/2.png"
+    },
+    "description": "Kościół matki boskiej ośmiobitowej",
+    "photoPath": null,
+    "link": "http://www.zso1.pl/"
+  }
+]
