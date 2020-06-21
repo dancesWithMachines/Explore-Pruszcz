@@ -56,7 +56,7 @@ export class MainComponent implements OnInit {
   setOptions() {
     let mapStyles = new MapStyles();
     this.options = {
-      maxZoom: 15,
+      maxZoom: 17,
       minZoom: 8,
       styles: mapStyles.mapTypeStyle
     }
@@ -86,6 +86,10 @@ export class MainComponent implements OnInit {
 
   moveToCenter(center: google.maps.LatLngLiteral) {
     this.map.panTo(center);
+  }
+
+  mapZoom(number: number) {
+    this.map.zoom = number;
   }
 
   //WTF IS DIS

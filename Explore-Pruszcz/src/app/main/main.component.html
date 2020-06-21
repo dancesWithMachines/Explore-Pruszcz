@@ -82,7 +82,7 @@
           <tbody>
             <tr *ngFor="let place of filteredPlaces">
               <th scope="row">{{place.id}}</th>
-              <td (click)="setCurrentPlace(place.id); scroll('map') ; moveToCenter(place.location)">{{place.title}}</td>
+              <td (click)="setCurrentPlace(place.id); scroll('map') ; moveToCenter(place.location) ; mapZoom(17)">{{place.title}}</td>
             </tr>
           </tbody>
         </table>
