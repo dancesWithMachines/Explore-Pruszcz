@@ -10806,5 +10806,18 @@ td:hover {
   transform: scale(1.03); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
 }
 
+.mapLabel {
+  max-width: 10rem;
+  align-items: center;
+}
 
-
+.storemapper-iw-container {
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 7px 1px rgba(0,0,0,0.3);
+  font-size: 13px;
+  font-weight: 300;
+  max-width: 300px;
+  padding: 12px;
+  text-align: center;
+}

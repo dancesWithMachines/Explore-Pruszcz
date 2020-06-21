@@ -28,9 +28,10 @@ export class MainComponent implements OnInit {
   zoom: number = 14;
   placesData = data;
   infoContent: string = '';
+  firstImagePath: string = '';
   mapStyles;
   options: google.maps.MapOptions;
-
+  windowOptions: google.maps.InfoWindowOptions;
   center: google.maps.LatLngLiteral = {
     lat: 54.262210,
     lng: 18.636135
@@ -91,6 +92,12 @@ export class MainComponent implements OnInit {
   openInfo( id: number) {
     this.marker = this.markers.find(mapMarker => mapMarker._label._value == id);
     this.infoContent = this.marker.getTitle();
+    this.firstImagePath = this.currentPlace.photoPaths[0];
+    this.windowOptions = {
+      maxWidth: 300
+    }
+    this.info.options = this.windowOptions;
     this.info.open(this.marker);
+    
   }
 }
