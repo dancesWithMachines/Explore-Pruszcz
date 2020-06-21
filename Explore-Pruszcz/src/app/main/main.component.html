@@ -10,7 +10,7 @@
                     [position]="marker.location"
                     [title]="marker.title"
                     [options]="marker.options"
-                    (mapClick)="setCurrentPlace(marker.id); scroll()">
+                    (mapClick)="setCurrentPlace(marker.id); scroll(); moveToCenter(marker.location)">
         </map-marker>
       </google-map>
       <div *ngFor="let marker of places">
@@ -18,7 +18,7 @@
     </div>
   </section>
   <hr class="m-0" />
-  <!--Opis-->
+  <!--Description-->
   <section class="resume-section" id="description">
     <div class="resume-section-content">
       <!--<h2 class="mb-5">Experience</h2>-->
@@ -26,11 +26,40 @@
         <div class="flex-grow-1">
           <h2 class="mb-0">{{currentPlace.title}}</h2>
           <!--<div class="subheading mb-3">Intelitec Solutions</div>-->
-          <img class="border border-primary border-img" src="{{currentPlace.photoPath}}" width="100%" height="auto">
+            <img class="border border-primary border-img img-fluid" src="{{currentPlace.photoPath}}" width="100%" height="auto">
           <p>{{currentPlace.description}}</p>
           <a href="{{currentPlace.link}}">Dowiedz się więcej</a>
         </div>
       </div>
+    </div>
+  </section>
+  <hr class="m-0" />
+  <!--Table of places-->
+  <section class="resume-section" id="tableOfPlaces">
+    <div class="resume-section-content">
+      <h2 class="mb-0">Wyszukaj miejsce</h2>
+      <div class="active-primary-3 active-primary-4 mb-4">
+        <input name="searchBar" [(ngModel)]="searchBar" (ngModelChange)="search()" class="form-control" type="text" placeholder="Szukaj" aria-label="Search">
+      </div>
+      <ng-container *ngIf="searchBar != ''">
+        <table class="table" *ngIf="filteredPlaces.length > 0; else noResults">
+          <thead>
+            <tr class="table-primary">
+              <th scope="col">Numer</th>
+              <th scope="col">Nazwa</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let place of filteredPlaces">
+              <th scope="row">{{place.id}}</th>
+              <td (click)="setCurrentPlace(place.id); scroll() ; moveToCenter(place.location)">{{place.title}}</td>
+            </tr>
+          </tbody>
+        </table>
+        <ng-template #noResults>
+          Nie znaleziono
+        </ng-template>
+      </ng-container>
     </div>
   </section>
   <hr class="m-0" />
@@ -41,9 +70,9 @@
       <!--<div class="subheading mb-5">3542 Berry Street · Cheyenne Wells, CO 80810 · (317) 585-8468 · <a href="mailto:name@email.com">name@email.com</a></div>-->
       <p class="lead mb-5">
         Jestem studentem Uniwersytetu Gdańskiego na kierunku Informatyka i Ekonometria.
-        <br/>
+        <br />
         Ta aplikacja została stworzona na podtawie projektu autorstwa Clarence Taylor (licencja MIT).
-        <br/>
+        <br />
         <a href="https://startbootstrap.com/themes/resume/">Przejdź do strony projektu</a>
       </p>
       <div class="social-icons">

@@ -2,11 +2,12 @@
   "ExpandedNodes": [
     "",
     "\\src",
+    "\\src\\app",
+    "\\src\\app\\main",
     "\\src\\assets",
-    "\\src\\assets\\img",
-    "\\src\\shared",
+    "\\src\\shared\\mapStyles",
     "\\src\\shared\\models"
   ],
-  "SelectedNode": "\\src\\shared\\models\\place.model.ts",
+  "SelectedNode": "\\src\\app\\app.component.html",
   "PreviewInSolutionExplorer": false
 }

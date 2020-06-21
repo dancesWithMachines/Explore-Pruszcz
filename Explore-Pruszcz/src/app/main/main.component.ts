@@ -1,10 +1,11 @@
-import { Component, OnInit, HostListener } from '@angular/core';
+import { Component, OnInit, HostListener, ViewChild } from '@angular/core';
 import mapStyle from 'variables/mapStyle.json';
 import data from 'variables/appData.json';
 import { Place } from 'src/shared/models/place.model';
 import { CommonModule } from "@angular/common";
 import { MapStyles } from 'src/shared/mapStyles/map.style';
 import { TargetLocator } from 'selenium-webdriver';
+import { GoogleMap } from '@angular/google-maps';
 
 
 @Component({
@@ -14,12 +15,16 @@ import { TargetLocator } from 'selenium-webdriver';
 })
 
 export class MainComponent implements OnInit {
-  public innerHeight: any;
   public places: Place[];
+  public filteredPlaces: Place[];
   public currentPlace: Place;
+  searchBar: string = '';
+  public innerHeight: any;
+  @ViewChild(GoogleMap, { static: false }) map: GoogleMap;
+  zoom: number = 14;
   placesData = data;
   mapStyles;
-  zoom: number = 14;
+  options: google.maps.MapOptions;
   center: google.maps.LatLngLiteral = {
     lat: 54.262210,
     lng: 18.636135
@@ -28,7 +33,6 @@ export class MainComponent implements OnInit {
     color: 'red',
     text: 'Marker label '
   }
-  options: google.maps.MapOptions;
 
   constructor() { }
 
@@ -39,7 +43,7 @@ export class MainComponent implements OnInit {
     this.setOptions();
     this.setCurrentPlace(0);
     //console.log(this.places);
-   
+    this.search();
   }
 
   setOptions() {
@@ -67,6 +71,14 @@ export class MainComponent implements OnInit {
   scroll() {
     const el: HTMLElement = document.getElementById('description');
     el.scrollIntoView();
+  }
+
+  search() {
+    this.filteredPlaces = this.places.filter(c => c.title.toUpperCase().includes(this.searchBar.toUpperCase()) && c.id>0);
+  }
+
+  moveToCenter(center: google.maps.LatLngLiteral) {
+    this.map.panTo(center);
   }
 
   

@@ -1770,7 +1770,7 @@ pre {
 .table-primary,
 .table-primary > th,
 .table-primary > td {
-  background-color: #edd2c7;
+  background-color: #bd5d38;
 }
 
   .table-primary th,
@@ -10781,6 +10781,21 @@ section.map-section {
 .border-img {
   border-width: 0.5rem !important;
   max-width: 50rem
+}
+
+.active-primary-4 input[type=text]:focus:not([readonly]) {
+  border: 1px solid #bd5d38;
+  box-shadow: 0 0 0 1px #bd5d38;
+}
+
+.active-primary-3 input[type=text] {
+  border: 1px solid #bd5d38;
+  box-shadow: 0 0 0 1px #bd5d38;
+}
+
+td:hover {
+  cursor: pointer;
+  color: #bd5d38
 }
 
 
