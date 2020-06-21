@@ -10821,3 +10821,7 @@ td:hover {
   padding: 12px;
   text-align: center;
 }
+
+.map-window {
+  text-align: center;
+}

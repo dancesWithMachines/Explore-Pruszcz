@@ -11,8 +11,8 @@
                       [title]="marker.title"
                       [options]="marker.options"
                       (mapClick)="setCurrentPlace(marker.id); moveToCenter(marker.location); openInfo(marker.id)">
-          </map-marker>
-        <map-info-window><img width=100% height="auto" src="{{firstImagePath}}" /><br />{{ infoContent }}<br /><button class="btn btn-primary block" (click)="scroll('description')">Pokarz opis</button></map-info-window>
+          </map-marker>      
+          <map-info-window><div class="map-window"><img width=100% height="auto" src="{{firstImagePath}}" /><br /><h6>{{ infoContent }}</h6><button class="btn btn-primary btn-block" (click)="scroll('description')">Pokarz opis</button></div></map-info-window>
       </google-map>
       <div *ngFor="let marker of places">
       </div>
