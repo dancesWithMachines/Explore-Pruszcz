@@ -1,4 +1,4 @@
-import { Component, OnInit, HostListener, ViewChild } from '@angular/core';
+import { Component, OnInit, HostListener, ViewChild, ViewChildren, QueryList } from '@angular/core';
 import mapStyle from 'variables/mapStyle.json';
 import data from 'variables/appData.json';
 import { Place } from 'src/shared/models/place.model';
@@ -6,6 +6,7 @@ import { CommonModule } from "@angular/common";
 import { MapStyles } from 'src/shared/mapStyles/map.style';
 import { TargetLocator } from 'selenium-webdriver';
 import { GoogleMap } from '@angular/google-maps';
+import { MapInfoWindow, MapMarker } from '@angular/google-maps'
 
 
 @Component({
@@ -21,10 +22,15 @@ export class MainComponent implements OnInit {
   searchBar: string = '';
   public innerHeight: any;
   @ViewChild(GoogleMap, { static: false }) map: GoogleMap;
+  @ViewChild(MapInfoWindow, { static: false }) info: MapInfoWindow;
+  @ViewChildren('markers') markers: QueryList<any>;
+  marker: MapMarker;
   zoom: number = 14;
   placesData = data;
+  infoContent: string = '';
   mapStyles;
   options: google.maps.MapOptions;
+
   center: google.maps.LatLngLiteral = {
     lat: 54.262210,
     lng: 18.636135
@@ -68,8 +74,8 @@ export class MainComponent implements OnInit {
     this.currentPlace = this.places[id];
   }
 
-  scroll() {
-    const el: HTMLElement = document.getElementById('description');
+  scroll(section:string) {
+    const el: HTMLElement = document.getElementById(section);
     el.scrollIntoView();
   }
 
@@ -81,5 +87,10 @@ export class MainComponent implements OnInit {
     this.map.panTo(center);
   }
 
-  
+  //WTF IS DIS
+  openInfo( id: number) {
+    this.marker = this.markers.find(mapMarker => mapMarker._label._value == id);
+    this.infoContent = this.marker.getTitle();
+    this.info.open(this.marker);
+  }
 }

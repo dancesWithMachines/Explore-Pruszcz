@@ -5,13 +5,16 @@
   <section class="map-section" id="map">
     <div class="map-section-content">
       <google-map width=100% height="{{innerHeight}}" [options]="options" [center]="center" [zoom]="zoom">
-        <map-marker *ngFor="let marker of places"
-                    [label]="marker.id.toString()"
-                    [position]="marker.location"
-                    [title]="marker.title"
-                    [options]="marker.options"
-                    (mapClick)="setCurrentPlace(marker.id); scroll(); moveToCenter(marker.location)">
-        </map-marker>
+        <ng-container>
+          <map-marker  #markers *ngFor="let marker of places"
+                      [label]="marker.id.toString()"
+                      [position]="marker.location"
+                      [title]="marker.title"
+                      [options]="marker.options"
+                      (mapClick)="setCurrentPlace(marker.id); moveToCenter(marker.location); openInfo(marker.id)">
+          </map-marker>
+        </ng-container>
+        <map-info-window>{{ infoContent }}<br /><button class="btn btn-primary" (click)="scroll('description')">Pokarz opis</button></map-info-window>
       </google-map>
       <div *ngFor="let marker of places">
       </div>
@@ -81,7 +84,7 @@
           <tbody>
             <tr *ngFor="let place of filteredPlaces">
               <th scope="row">{{place.id}}</th>
-              <td (click)="setCurrentPlace(place.id); scroll() ; moveToCenter(place.location)">{{place.title}}</td>
+              <td (click)="setCurrentPlace(place.id); scroll('map') ; moveToCenter(place.location)">{{place.title}}</td>
             </tr>
           </tbody>
         </table>
