@@ -10798,4 +10798,13 @@ td:hover {
   color: #bd5d38
 }
 
+.zoom {
+  transition: transform 0.2s; /* Animation */
+}
+
+.zoom:hover {
+  transform: scale(1.03); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+}
+
+
 
