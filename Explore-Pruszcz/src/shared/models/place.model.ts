@@ -9,6 +9,6 @@ export class Place {
     icon: string;
   }
   description: string;
-  photoPath: string;
+  photoPaths: string[];
   link: string;
 }
