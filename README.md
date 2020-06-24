@@ -4,10 +4,11 @@ Explore Pruszcz is map based web app created in Angular Framework. It's goal is 
 ## 𝗧𝗮𝗯𝗹𝗲 𝗼𝗳 𝗖𝗼𝗻𝘁𝗲𝗻𝘁𝘀
 * [About project](#about-project)
 * [Functionality](#functionality)
-* [Additional info.](#additional-info.)
+* [Additional info.](#additional-info)
   * [Api key](#api-key)
   * [Map styles](#map-styles)
   * [Data and pictures](#data-and-pictures)
+* [Author](#author)
 
 ## About project
 This project started as me testing google maps module in Angular, but then it was supposed to became project for the competition about city promotion (maybe it will).
@@ -32,4 +33,5 @@ All data about places is stored in loacal Json file named ```appData.json```. Yo
 
 All photos and icons are located in ```asserts\img``` broken down to separate folders.
 
-Note: Photos and pictures (not including icons) are not part of the software. It is forbidden to use them, except for application testing.
+## Author
+Mateusz Kusiak
