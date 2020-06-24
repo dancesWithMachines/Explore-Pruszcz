@@ -5,12 +5,11 @@
     "\\src\\app",
     "\\src\\app\\main",
     "\\src\\assets",
-    "\\src\\css",
+    "\\src\\assets\\img",
+    "\\src\\js",
     "\\src\\shared",
     "\\src\\shared\\mapStyles",
-    "\\src\\shared\\models",
-    "\\variables"
+    "\\src\\shared\\models"
   ],
-  "SelectedNode": "\\src\\shared\\models\\place.model.ts",
   "PreviewInSolutionExplorer": false
 }
