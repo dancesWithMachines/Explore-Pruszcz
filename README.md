@@ -1,7 +1,7 @@
 # 𝗘𝘅𝗽𝗹𝗼𝗿𝗲 𝗣𝗿𝘂𝘀𝘇𝗰𝘇
 Explore Pruszcz is map based web app created in Angular Framework. It's goal is to promote city Pruszcz Gdański.
 ![Functionality](Screenshots/functionality.gif)
-## 𝗧𝗮𝗯𝗹𝗲 𝗼𝗳 𝗖𝗼𝗻𝘁𝗲𝗻𝘁𝘀
+## Table of Contents
 * [About project](#about-project)
 * [Functionality](#functionality)
 * [Additional info.](#additional-info)
